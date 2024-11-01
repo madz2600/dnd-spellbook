@@ -16,8 +16,8 @@ function initSpells()
             let cols = data.split("\r\n")[0].split("\t");
             let rows = data.split("\r\n").slice(1);
 
-            //console.log(cols);
-            //console.log(rows);
+            console.log(cols);
+            console.log(rows);
 
             for (let row of rows)
             {
