@@ -12,6 +12,9 @@ function initSpells()
         dataType: "text",
         async: true,
         success: function(data) {
+
+            console.log(data);
+
             let spells = [];
             let cols = data.split("\r\n")[0].split("\t");
             let rows = data.split("\r\n").slice(1);
