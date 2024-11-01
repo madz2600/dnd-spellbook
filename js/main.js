@@ -12,12 +12,14 @@ function initSpells()
         dataType: "text",
         async: true,
         success: function(data) {
-
+            // Fix Windows
+            data = data.replace("\r\n", "\n");
+            
             console.log(data);
 
             let spells = [];
-            let cols = data.split("\r\n")[0].split("\t");
-            let rows = data.split("\r\n").slice(1);
+            let cols = data.split("\n")[0].split("\t");
+            let rows = data.split("\n").slice(1);
 
             console.log(cols);
             console.log(rows);

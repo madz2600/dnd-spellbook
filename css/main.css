@@ -44,6 +44,12 @@ body
     padding-left: 10px;
 }
 
+.select-type,
+.select-element
+{
+    display: none;
+}
+
 .select-list input[type=checkbox]
 {
     display: none;
