@@ -62,6 +62,7 @@ function initSpells()
 
             //console.log(spells);
             console.log("Successfully loaded spells.");
+            console.log(spells);
             setupSpells(spells);
         },
         error: function() {
