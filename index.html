@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DND Spellbook</title>
+        <link rel="shortcut icon" href="./img/favicon.png">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');</style>
+        <link rel="stylesheet" href="./css/main.css">
+        <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="./js/main.js"></script>
+    </head>
+    <body>
+        <div class="select-list select-class">
+            <input type="checkbox" id="select-class-all" name="all" value="">
+            <label for="select-class-all">all</label>
+            <input type="checkbox" id="select-class-artificer" name="artificer" value="">
+            <label for="select-class-artificer" style="background-image:url('./img/icons/lorc/rune-stone.png');">artificer</label>
+            <input type="checkbox" id="select-class-bard" name="bard" value="">
+            <label for="select-class-bard" style="background-image:url('./img/icons/lorc/lyre.png');">bard</label>
+            <input type="checkbox" id="select-class-cleric" name="cleric" value="">
+            <label for="select-class-cleric" style="background-image:url('./img/icons/delapouite/aspergillum.png');">cleric</label>
+            <input type="checkbox" id="select-class-druid" name="druid" value="">
+            <label for="select-class-druid" style="background-image:url('./img/icons/lorc/moon.png');">druid</label>
+            <input type="checkbox" id="select-class-fighter" name="fighter" value="">
+            <label for="select-class-fighter" style="background-image:url('./img/icons/delapouite/sword-brandish.png');">fighter</label>
+            <input type="checkbox" id="select-class-paladin" name="paladin" value="">
+            <label for="select-class-paladin" style="background-image:url('./img/icons/delapouite/cross-shield.png');">paladin</label>
+            <input type="checkbox" id="select-class-ranger" name="ranger" value="">
+            <label for="select-class-ranger" style="background-image:url('./img/icons/lorc/high-shot.png');">ranger</label>
+            <input type="checkbox" id="select-class-rogue" name="rogue" value="">
+            <label for="select-class-rogue" style="background-image:url('./img/icons/lorc/plain-dagger.png');">rogue</label>
+            <input type="checkbox" id="select-class-sorcerer" name="sorcerer" value="">
+            <label for="select-class-sorcerer" style="background-image:url('./img/icons/lorc/magic-swirl.png');">sorcerer</label>
+            <input type="checkbox" id="select-class-warlock" name="warlock" value="">
+            <label for="select-class-warlock" style="background-image:url('./img/icons/delapouite/warlock-eye.png');">warlock</label>
+            <input type="checkbox" id="select-class-wizard" name="wizard" value="">
+            <label for="select-class-wizard" style="background-image:url('./img/icons/delapouite/spell-book.png');">wizard</label>
+        </div>
+        <div class="select-list select-level">
+            <input type="checkbox" id="select-level-all" name="all" value="">
+            <label for="select-level-all">all</label>
+            <input type="checkbox" id="select-level-0" name="level" value="0">
+            <label for="select-level-0">cantrip</label>
+            <input type="checkbox" id="select-level-1" name="level" value="1">
+            <label for="select-level-1">1</label>
+            <input type="checkbox" id="select-level-2" name="level" value="2">
+            <label for="select-level-2">2</label>
+            <input type="checkbox" id="select-level-3" name="level" value="3">
+            <label for="select-level-3">3</label>
+            <input type="checkbox" id="select-level-4" name="level" value="4">
+            <label for="select-level-4">4</label>
+            <input type="checkbox" id="select-level-5" name="level" value="5">
+            <label for="select-level-5">5</label>
+            <input type="checkbox" id="select-level-6" name="level" value="6">
+            <label for="select-level-6">6</label>
+            <input type="checkbox" id="select-level-7" name="level" value="7">
+            <label for="select-level-7">7</label>
+            <input type="checkbox" id="select-level-8" name="level" value="8">
+            <label for="select-level-8">8</label>
+            <input type="checkbox" id="select-level-9" name="level" value="9">
+            <label for="select-level-9">9</label>
+        </div>
+        <div class="select-list select-type">
+            <input type="checkbox" id="select-type-all" name="all" value="">
+            <label for="select-type-all">all</label>
+            <input type="checkbox" id="select-type-damage" name="damage" value="">
+            <label for="select-type-damage">damage</label>
+            <input type="checkbox" id="select-type-heal" name="heal" value="">
+            <label for="select-type-heal">heal</label>
+            <input type="checkbox" id="select-type-resistance" name="resistance" value="">
+            <label for="select-type-resistance">resistance</label>
+        </div>
+        <div class="select-list select-element">
+            <input type="checkbox" id="select-element-all" name="all" value="">
+            <label for="select-element-all">all</label>
+            <input type="checkbox" id="select-element-acid" name="acid" value="">
+            <label for="select-element-acid">acid</label>
+            <input type="checkbox" id="select-element-cold" name="cold" value="">
+            <label for="select-element-cold">cold</label>
+            <input type="checkbox" id="select-element-fire" name="fire" value="">
+            <label for="select-element-fire">fire</label>
+            <input type="checkbox" id="select-element-force" name="force" value="">
+            <label for="select-element-force">force</label>
+            <input type="checkbox" id="select-element-lightning" name="lightning" value="">
+            <label for="select-element-lightning">lightning</label>
+            <input type="checkbox" id="select-element-necrotic" name="necrotic" value="">
+            <label for="select-element-necrotic">necrotic</label>
+            <input type="checkbox" id="select-element-poison" name="poison" value="">
+            <label for="select-element-poison">poison</label>
+            <input type="checkbox" id="select-element-psychic" name="psychic" value="">
+            <label for="select-element-psychic">psychic</label>
+            <input type="checkbox" id="select-element-radiant" name="radiant" value="">
+            <label for="select-element-radiant">radiant</label>
+            <input type="checkbox" id="select-element-thunder" name="thunder" value="">
+            <label for="select-element-thunder">thunder</label>
+            <input type="checkbox" id="select-element-bludgeoning" name="bludgeoning" value="">
+            <label for="select-element-bludgeoning">bludgeoning</label>
+            <input type="checkbox" id="select-element-piercing" name="piercing" value="">
+            <label for="select-element-piercing">piercing</label>
+            <input type="checkbox" id="select-element-slashing" name="slashing" value="">
+            <label for="select-element-slashing">slashing</label>
+            <input type="checkbox" id="select-element-elemental" name="elemental" value="">
+            <label for="select-element-elemental">elemental</label>
+            <input type="checkbox" id="select-element-physical" name="physical" value="">
+            <label for="select-element-physical">physical</label>
+
+        </div>
+        <div class="spell-gallery">
+            <div class="spell-template" data-level="0">
+                <div class="border-outer">
+                    <div class="border-inner">
+                        <div class="title">
+                            <img src="./img/icons/lorc/scroll-unfurled.png">
+                            <span class="value">title</span>
+                        </div>
+                        <div class="school">school</div>
+                        <div class="level">level 1</div>
+                        <div class="details">
+                            <div class="range">
+                                <img src="./img/icons/delapouite/horizontal-flip.png" title="Range" alt="Range"><br>
+                                <span class="value">10 feet</span>
+                            </div>
+                            <div class="duration">
+                                <img src="./img/icons/lorc/sands-of-time.png" title="Duration" alt="Duration"><br>
+                                <span class="value">1 minute</span>
+                            </div>
+                            <div class="casting-time">
+                                <img src="./img/icons/skoll/stopwatch.png" title="Casting time" alt="Casting time"><br>
+                                <span class="value">1 action</span>
+                            </div>
+                            <div class="conditions">
+                                <div class="concentration">concentration</div>
+                                <div class="components">components</div>
+                            </div>
+                        </div>
+                        <div class="description">description</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

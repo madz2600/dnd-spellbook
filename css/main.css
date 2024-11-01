@@ -1,0 +1,290 @@
+:root
+{
+    --color-border: #111;
+    --spell-bg: #f2ede7;
+    --spell-max-lines: 3;
+}
+
+html, body
+{
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    background-color: #222;
+    font-family: arial;
+    color: #EEE;
+}
+
+.select-list
+{
+    padding: 5px 10px;
+    line-height: 42px;
+}
+
+.select-list label
+{
+    text-transform: capitalize;
+    background-color: #444;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.select-class label
+{
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 40px;
+}
+.select-class label:first-of-type
+{
+    padding-left: 10px;
+}
+
+.select-list input[type=checkbox]
+{
+    display: none;
+}
+
+.select-list input[type=checkbox]:checked + label
+{
+    background-color: #111;
+    filter: invert(100%);
+}
+
+.spell-gallery
+{
+    align-items: flex-start;
+    flex-flow: row wrap;
+    display: flex;
+}
+
+.spell-template
+{
+    display: none;
+}
+
+.spell
+{
+    background-color: var(--spell-bg);
+    width: calc(33.3% - 30px);
+    display: inline-block;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12pt;
+    margin: 10px;
+    color: #222;
+}
+
+.spell .border-outer
+{
+    margin: 5px;
+}
+
+.spell .border-outer::before, .spell .border-outer::after,
+.spell .border-inner::before, .spell .border-inner::after
+{
+    border: 2px solid var(--color-border);
+    position: absolute;
+    display: block;
+    content: "";
+    height: 5px;
+    width: 5px;
+}
+.spell .border-outer::before
+{
+    left: 3px;
+    top: 3px;
+}
+.spell .border-outer::after
+{
+    right: 3px;
+    top: 3px;
+}
+.spell .border-inner::before
+{
+    bottom: -2px;
+    left: -2px;
+}
+.spell .border-inner::after
+{
+    bottom: -2px;
+    right: -2px;
+}
+
+.spell .border-inner
+{
+    padding: 10px;
+    margin: 3px;
+}
+
+.spell .border-outer, .spell .border-inner
+{
+    border: 2px solid var(--color-border);
+    position: relative;
+}
+
+.spell .title
+{
+    font-family: "Quintessential", serif;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    overflow: hidden;
+    font-size: 16pt;
+    display: flex;
+}
+
+.spell .title img
+{
+    filter: drop-shadow(0px 1000px 0 #000);
+    transform: translateY(-1000px);
+    margin-right: 10px;
+    height: 30px;
+    opacity: .8;
+}
+
+.spell[data-type="damage"][data-element="acid"] .title img {filter: drop-shadow(0px 1000px 0 lightgreen);}
+.spell[data-type="damage"][data-element="cold"] .title img {filter: drop-shadow(0px 1000px 0 lightblue);}
+.spell[data-type="damage"][data-element="fire"] .title img {filter: drop-shadow(0px 1000px 0 orangered);}
+.spell[data-type="damage"][data-element="force"] .title img {filter: drop-shadow(0px 1000px 0 darkred);}
+.spell[data-type="damage"][data-element="lightning"] .title img {filter: drop-shadow(0px 1000px 0 blue);}
+.spell[data-type="damage"][data-element="necrotic"] .title img {filter: drop-shadow(0px 1000px 0 darkgreen);}
+.spell[data-type="damage"][data-element="poison"] .title img {filter: drop-shadow(0px 1000px 0 green);}
+.spell[data-type="damage"][data-element="psychic"] .title img {filter: drop-shadow(0px 1000px 0 purple);}
+.spell[data-type="damage"][data-element="radiant"] .title img {filter: drop-shadow(0px 1000px 0 orange);}
+.spell[data-type="damage"][data-element="thunder"] .title img {filter: drop-shadow(0px 1000px 0 #4a00ff);}
+.spell[data-type="damage"][data-element="bludgeoning"] .title img {filter: drop-shadow(0px 1000px 0 #4b4b4b);}
+.spell[data-type="damage"][data-element="piercing"] .title img {filter: drop-shadow(0px 1000px 0 #4b4b4b);}
+.spell[data-type="damage"][data-element="slashing"] .title img {filter: drop-shadow(0px 1000px 0 #4b4b4b);}
+.spell[data-type="damage"][data-element="elemental"] .title img {filter: drop-shadow(0px 1000px 0 #6a3d3d);}
+.spell[data-type="damage"][data-element="physical"] .title img {filter: drop-shadow(0px 1000px 0 #4b4b4b);}
+.spell[data-type="damage"][data-element=""] .title img {filter: drop-shadow(0px 1000px 0 pink);}
+.spell[data-type="heal"] .title img {filter: drop-shadow(0px 1000px 0 #00ffb3);}
+.spell[data-type="resistance"] .title img {filter: drop-shadow(0px 1000px 0 #9a7030);}
+.spell[data-type="utility"] .title img {filter: drop-shadow(0px 1000px 0 #514583);}
+
+.spell .level
+{
+    text-transform: capitalize;
+}
+
+.spell .school
+{
+    vertical-align: center;
+    position: absolute;
+    text-align: center;
+    right: 10px;
+    top: 10px;
+}
+
+.spell .school img
+{
+    filter: invert();
+    height: 25px;
+    opacity: 0.8;
+}
+
+.spell .description
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--spell-max-lines);
+    -webkit-box-orient: vertical;
+    line-height: 20px;
+    max-height: calc(var(--spell-max-lines) * 20px);
+    transition: 0s;
+}
+
+.spell.expanded .description
+{
+    -webkit-line-clamp: 999;
+    max-height: 999px;
+    transition: .5s;
+}
+
+.spell .description .dice,
+.spell .description .damage
+{
+    font-weight: bold;
+}
+
+.spell .details
+{
+    border: 1px solid #222;
+    border-width: 1px 0 1px 0;
+    align-items: center;
+    padding: 5px 0;
+    margin: 5px 0;
+    display: flex;
+}
+
+.spell .details > div
+{
+    font-family: tahoma, verdana, arial;
+    display: inline-block;
+    font-size: 11pt;
+}
+
+.spell .details .range,
+.spell .details .duration,
+.spell .details .casting-time
+{
+    text-align: center;
+    margin-left: 5px;
+}
+
+.spell .details .range
+{
+    margin-left: 0;
+}
+
+.spell .details .range > img,
+.spell .details .duration > img,
+.spell .details .casting-time > img
+{
+    filter: invert();
+    height: 20px;
+    opacity: 0.8;
+}
+
+.spell .details .conditions
+{
+    margin-left: auto;
+}
+
+.spell .details .conditions > div
+{
+    float: left;
+}
+
+.spell .details .conditions > div img
+{
+    margin-left: 5px;
+}
+
+.spell .details .components img,
+.spell .details .concentration img
+{
+    filter: invert();
+    height: 30px;
+    opacity: 0.8;
+}
+
+@media only screen and (min-width: 1000px) {
+    .spell
+    {
+        width: calc(50% - 30px);
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    .spell
+    {
+        width: calc(33.3% - 30px);
+    }
+}
