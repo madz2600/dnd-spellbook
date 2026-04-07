@@ -13,16 +13,16 @@ function initSpells()
         async: true,
         success: function(data) {
             // Fix Windows
-            data = data.replace("\r\n", "\n");
+            data = data.replace(/[\r]+/g, "");
             
-            console.log(data);
+            //console.log(data);
 
             let spells = [];
             let cols = data.split("\n")[0].split("\t");
             let rows = data.split("\n").slice(1);
 
-            console.log(cols);
-            console.log(rows);
+            //console.log(cols);
+            //console.log(rows);
 
             for (let row of rows)
             {
@@ -38,9 +38,6 @@ function initSpells()
                 {
                     let col = cols[i];
                     let val = entry[i];
-
-                    val = val.replace("\"", "");
-                    val = val.replace('"', '');
 
                     // Cases
                     if (col == "classes")
@@ -66,8 +63,8 @@ function initSpells()
             }
 
             //console.log(spells);
-            console.log("Successfully loaded spells.");
-            console.log(spells);
+            //console.log("Successfully loaded spells.");
+            //console.log(spells);
             setupSpells(spells);
         },
         error: function() {
