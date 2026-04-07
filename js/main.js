@@ -39,6 +39,10 @@ function initSpells()
                     let col = cols[i];
                     let val = entry[i];
 
+                    // Remove the annoying quotations in the spell description
+                    val = val.replace("\"", "");
+                    val = val.replace('"', '');
+
                     // Cases
                     if (col == "classes")
                     {
