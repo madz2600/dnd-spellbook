@@ -1,0 +1,437 @@
+:root {
+    --card-height: 700px;
+    --card-width: 500px;
+    --color-card: #27252e;
+    --color-card-light: #3d3b47;
+    --color-border-light: #cfe4ee;
+    --color-border-dark: #869196;
+    --border-gradient: linear-gradient(180deg, var(--color-border-light) 0%, var(--color-border-dark) 100%) 1;
+    /*--color-border: #bc106f;/*--color-border: #ffae00;*/
+    --color-abjuration: #309caa;
+    --color-enchantment: #9410bc;
+    --color-conjuration: #582dbe;
+    --color-illusion: #2449c2;
+    --color-transmutation: #10bc58;
+    --color-divination: #d6ad3c;
+    --color-necromancy: #6b5b2f;
+    --color-evocation: #bc106f;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background: radial-gradient(#555, #222);
+    justify-content: center;
+    align-items: center;
+    perspective: 1600px;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.container.dragging,
+.container.dragging .card {
+    cursor: grabbing;
+}
+
+.container.dragging .card {
+    transition: none;
+}
+
+.card.template {
+    display: none;
+}
+
+.card {
+    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background-color: var(--color-card);
+    transform-style: preserve-3d;
+    /*box-shadow: 0px 0px 3px #000;
+    border: 10px solid #FFF;*/
+    position: relative;
+    border-radius: 8px;
+    height: var(--card-height);
+    width: var(--card-width);
+    margin: 10px;
+    zoom: 1;
+}
+
+.card:not(.focused) {
+    transition: box-shadow .5s;
+}
+
+.card:hover:not(.focused) {
+    box-shadow: 0px 0px 20px var(--color-border-light);
+    cursor: pointer;
+}
+
+.card.focused {
+    cursor: grab;
+}
+
+.container,
+.card > div,
+.card > div .border-outer,
+.card > div .border-inner,
+.card > .backside > .background {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.card > .frontside,
+.card > .backside {
+    backface-visibility: hidden;
+    /*pointer-events: none;
+    -webkit-user-select: none; /* Safari */
+    /*-ms-user-select: none; /* IE 10 and IE 11 */
+    /*user-select: none; /* Standard syntax */
+    border-radius: 8px;
+}
+
+.container.dragging > .card > .frontsize,
+.container.dragging > .card > .backside {
+    pointer-events: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.card > .backside {
+    background-color: var(--color-card);
+    transform: rotateY(180deg);
+}
+
+.card > .backside > .background {
+    background-image: url('https://png.pngtree.com/png-vector/20240317/ourmid/pngtree-black-line-seamless-geometric-diamond-shape-patterns-png-image_11999177.png');
+    background-position: 50% 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: .1;
+}
+
+.card > .backside > .spell-school {
+    /*background-image: url('https://images.vexels.com/media/users/3/425442/isolated/preview/c4107d7be7f2c6c75f0a482aa8258dbf-symmetrical-geometric-pattern-design-featuring-intricate-lines-and-shapes-t-shirt-design.png');*/
+    background-image: url('../img/schools/Evocation.png');
+    background-repeat: no-repeat;
+    background-position: 50% 33%;
+    background-size: 100%;
+    /*filter: invert(100%);*/
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    left: 15px;
+    top: 15px;
+    opacity: 1;
+}
+
+/* Card border */
+.card .border-outer
+{
+    border-radius: 7px;
+    margin: 10px;
+}
+
+.card .border-outer::before, .card .border-outer::after,
+.card .border-inner::before, .card .border-inner::after
+{
+    border: 4px solid;
+    position: absolute;
+    display: block;
+    content: "";
+    height: 5px;
+    width: 5px;
+    z-index: 1;
+}
+.card .border-outer::before /* Top left */
+{
+    border-color: var(--color-border-light);
+    left: 6px;
+    top: 6px;
+}
+.card .border-outer::after /* Top right */
+{
+    border-color: var(--color-border-light);
+    right: 6px;
+    top: 6px;
+}
+.card .border-inner::before /* Bottom left */
+{
+    border-color: var(--color-border-dark);
+    bottom: -4px;
+    left: -4px;
+}
+.card .border-inner::after  /* Bottom right */
+{
+    border-color: var(--color-border-dark);
+    bottom: -4px;
+    right: -4px;
+}
+
+.card .border-inner
+{
+    margin: 6px;
+}
+
+.card .border-outer, .card .border-inner
+{
+    border: 4px solid;
+    border-image: var(--border-gradient);
+    position: relative;
+}
+
+/* Card contents */
+.card .image {
+    box-shadow: inset 0px -10px 20px rgba(0, 0, 0, .6);
+    height: 40%;
+    width: 100%;
+}
+.card .image > img {
+    object-position: 50% 50%;
+    position: relative;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.card .spell-slot {
+    border: 4px solid #FFF;
+    background-color: var(--color-card);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .6);
+    transform: rotate(45deg);
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    line-height: 40px;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    right: -5px;
+    z-index: 2;
+    top: -5px;
+}
+.card .spell-slot > span {
+    font-family: "Metal Mania";
+    transform: rotate(-45deg);
+    font-size: 18pt;
+    display: block;
+    color: #FFF;
+}
+.card .spell-type {
+    background-color: var(--color-card);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .6);
+    border: 4px solid #FFF;
+    border-radius: 100%;
+    position: absolute;
+    overflow: hidden;
+    padding: 5px;
+    z-index: 2;
+    left: 2px;
+    top: 2px;
+}
+.card .spell-type img {
+    filter: drop-shadow(0px 1000px 0 #FFF);
+    transform: translateY(-1000px);
+    height: 32px;
+    width: 32px;
+}
+.card .spell-contents {
+    
+}
+.card .spell-name {
+    /*background: linear-gradient(180deg, var(--color-border-light) 0%, var(--color-border-dark) 100%);*/
+    background-color: var(--color-card-light);
+    border: 5px solid rgba(255, 255, 255, .05);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, .6);
+    border-width: 5px 0 5px 0;
+    font-family: "Metal Mania";
+    letter-spacing: 1pt;
+    text-align: center;
+    font-size: 20pt;
+    padding: 0px 0;
+    margin: 0px 0px;
+    color: #FFF;
+}
+
+.card.abjuration .spell-slot, .card.abjuration .spell-type {border-color: var(--color-abjuration)}
+.card.enchantment .spell-slot, .card.enchantment .spell-type {border-color: var(--color-enchantment)}
+.card.conjuration .spell-slot, .card.conjuration .spell-type {border-color: var(--color-conjuration)}
+.card.illusion .spell-slot, .card.illusion .spell-type {border-color: var(--color-illusion)}
+.card.transmutation .spell-slot, .card.transmutation .spell-type {border-color: var(--color-transmutation)}
+.card.divination .spell-slot, .card.divination .spell-type {border-color: var(--color-divination)}
+.card.necromancy .spell-slot, .card.necromancy .spell-type {border-color: var(--color-necromancy)}
+.card.evocation .spell-slot, .card.evocation .spell-type {border-color: var(--color-evocation)}
+
+.card .frontside .spell-description {
+    /*justify-content: space-evenly;
+    flex-direction: column;
+    display: flex;*/
+    /*background-color: rgba(255, 0, 255, .3);*/
+    font-family: "Pangolin";
+    white-space: pre-line;
+    position: absolute;
+    overflow-y: scroll;
+    padding: 10px;
+    bottom: 64px;
+    top: calc(40% + 43px);
+}
+.card .frontside .spell-description,
+.card .frontside .spell-description table {
+    font-size: 14pt;
+    color: #FFF;
+}
+
+.spell-description table {
+    width: 100%;
+}
+.spell-description table th {
+    text-align: left;
+}
+
+.card .frontside .spell-description > p:first-child {
+    margin-top: 0;
+}
+.card .frontside .spell-description > p:last-child {
+    margin-bottom: 0;
+}
+
+/* width */
+.spell-description::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.card:hover .spell-description::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, .2);
+}
+/* Handle */
+.card:hover .spell-description::-webkit-scrollbar-thumb {
+  background: var(--color-card-light);
+}
+
+.card .spell-attributes {
+    /*background-color: rgba(0, 255, 255, .5);*/
+    border-top: 2px solid var(--color-card-light);
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    font-family: "Pangolin";
+    position: absolute;
+    padding: 0 15px;
+    display: flex;
+    color: #FFF;
+    height: 24px;
+    bottom: 40px;
+    right: 0;
+    left: 0;
+}
+
+.card .spell-attributes > span {
+    text-transform: capitalize;
+    display: flex;
+}
+
+.card .spell-attributes > span::before {
+    background-size: contain;
+    display: inline-block;
+    margin-right: 10px;
+    content: "";
+    height: 20px;
+    width: 20px;
+}
+.card .spell-attributes > span.spell-range::before {background-image: url('../img/range_alt.png');filter: invert(100%);}
+.card .spell-attributes > span.spell-duration::before {background-image: url('../../img/icons/lorc/sands-of-time.png');}
+
+.card .spell-stats {
+    background-color: var(--color-card-light);
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    padding: 0 15px;
+    display: flex;
+    height: 40px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.card .spell-stats > div {
+    flex-direction: row;
+    display: flex;
+}
+
+.card .spell-stats .spell-action {
+    font-family: "Pangolin";
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    color: #FFF;
+}
+
+.card .spell-stats .spell-action::before {
+    transform: translateY(-1000px);
+    background-position: 50% 50%;
+    background-size: contain;
+    display: inline-block;
+    margin-right: 10px;
+    height: 16px;
+    width: 16px;
+    content: "";
+}
+.card .spell-stats .spell-action.action::before {
+    background-image: url('../../img/icons/delapouite/plain-square.png');
+    filter: drop-shadow(0px 1000px 0 #2fd420);
+}
+.card .spell-stats .spell-action.bonusAction::before {
+    background-image: url('../../img/icons/delapouite/plain-circle.png');
+    filter: drop-shadow(0px 1000px 0 #ff4a02);
+}
+.card .spell-stats .spell-action.reaction::before {
+    background-image: url('../../img/icons/skoll/diamonds.png');
+    filter: drop-shadow(0px 1000px 0 #b423ee);
+}
+
+.card .spell-stats .right span {
+    background-position: 50% 50%;
+    background-size: contain;
+    display: block;
+    margin: 0 5px;
+    height: 32px;
+    width: 32px;
+    opacity: .2;
+}
+
+.card .spell-stats span.toggle {
+    opacity: 1;
+}
+
+.card .spell-stats .ritual {background-image: url('../../img/icons/skoll/pentacle.png');}
+.card .spell-stats .concentration {background-image: url('../../img/icons/lorc/brain.png');}
+.card .spell-stats .verbal {background-image: url('../../img/icons/lorc/lips.png');}
+.card .spell-stats .somatic {background-image: url('../../img/icons/lorc/hand.png');}
+.card .spell-stats .material {background-image: url('../../img/icons/lorc/swap-bag.png');}
+
+@font-face {
+    font-family: "BookInsanityRemake";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/Bookinsanity.woff2");
+}
+@font-face {
+    font-family: "BookInsanityRemake";
+    font-weight: bold;
+    font-style: normal;
+    src: url("../fonts/Bookinsanity Bold.woff2");
+}
+@font-face {
+    font-family: "BookInsanityRemake";
+    font-weight: normal;
+    font-style: italic;
+    src: url("../fonts/Bookinsanity Italic.woff2");
+}
