@@ -1,5 +1,9 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2024 Spellbook</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Pangolin&display=swap" rel="stylesheet">
@@ -9,7 +13,56 @@
         <script type="text/javascript" src="./js/main.js" defer></script>
     </head>
     <body>
-        <div class="container">
+        <header class="spellbook-header">
+            <div>
+                <p class="eyebrow">Dungeons &amp; Dragons 2024</p>
+                <h1>Prepared Spellbook</h1>
+            </div>
+            <button class="add-spell-button" type="button">+ Add spells</button>
+        </header>
+        <main class="spellbook" aria-live="polite">
+            <div class="empty-spellbook">
+                <span class="empty-mark">✦</span>
+                <h2>Your spellbook is empty</h2>
+                <p>Gather the spells you have prepared for this adventure.</p>
+            </div>
+        </main>
+        <div class="modal" aria-hidden="true">
+            <div class="modal-panel spell-picker-panel" role="dialog" aria-modal="true" aria-labelledby="picker-title">
+                <div class="modal-heading">
+                    <div>
+                        <p class="eyebrow">The archive</p>
+                        <h2 id="picker-title">Choose spells</h2>
+                    </div>
+                    <button class="close-modal" type="button" aria-label="Close spell picker">&times;</button>
+                </div>
+                <div class="filters">
+                    <label class="spell-search">
+                        <span>Search spells</span>
+                        <input type="search" placeholder="Search by spell name" autocomplete="off">
+                    </label>
+                    <fieldset>
+                        <legend>Classes</legend>
+                        <div class="class-filters"></div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Spell level</legend>
+                        <div class="level-filters"></div>
+                    </fieldset>
+                </div>
+                <p class="result-count"></p>
+                <div class="spell-list"></div>
+            </div>
+            <div class="inspection" role="dialog" aria-modal="true" aria-labelledby="inspection-title">
+                <h2 id="inspection-title" class="sr-only">Spell inspection</h2>
+                <div class="inspection-card"></div>
+                <div class="inspection-actions">
+                    <button class="confirm-spell" type="button">Add it to spellbook</button>
+                    <button class="cancel-inspection" type="button">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-template">
             <div class="card template">
                 <div class="backside">
                     <div class="background"></div>
@@ -54,50 +107,6 @@
                     </div>
                 </div>
             </div>
-            <!--
-            <div class="card">
-                <div class="backside">
-                    <div class="background"></div>
-                    <div class="spell-school"></div>
-                    <div class="border-outer">
-                        <div class="border-inner"></div>
-                    </div>
-                </div>
-                <div class="frontside">
-                    <div class="border-outer">
-                        <div class="border-inner">
-                            <div class="image">
-                                <img src="https://www.dndlounge.com/wp-content/uploads/2023/10/tiefling-warlock-casts-eldritch-blast.webp" alt="Eldritch Blast">
-                            </div>
-                            <div class="spell-slot"><span>C</span></div>
-                            <div class="spell-type">
-                                <img src="../img/icons/lorc/rss.png" alt="Force">
-                            </div>
-                            <div class="spell-contents">
-                                <div class="spell-title">Eldritch Blast</div>
-                                <div class="spell-description">
-                                    <p>
-                                        You hurl a beam of crackling energy.
-                                    </p>
-                                    <p>
-                                        Make a ranged spell attack against one creature or object in range.
-                                        On a hit, the target takes 1d10 Force damage.
-                                    </p>
-                                    <p>
-                                        <b>At Higher Levels:</b> The spell creates two beams at level 5,
-                                        three beams at level 11, and four beams at level 17. You can direct
-                                        the beams at the same target or at different ones. Make a separate
-                                        attack roll for each beam.
-                                    </p>
-                                </div>
-                                <div class="spell-action">
-                                    Action
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
         </div>
     </body>
 </html>

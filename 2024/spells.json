@@ -39,7 +39,8 @@
 		"components": ["v", "s", "m"],
 		"material": "a bit of phosphorus",
 		"duration": "up to 1 minute",
-		"description": "You create up to four torch-size lights within range, making them appear as torches, lanterns, or glowing orbs that hover for the duration. Alternatively, you combine the four lights into one glowing Medium form that is vaguely humanlike. Whichever form you choose, each light sheds Dim Light in a 10-foot radius. \n\nAs a Bonus Action, you can move the lights up to 60 feet to a space within range. A light must be within 20 feet of another light created by this spell, and a light vanishes if it exceeds the spell's range."
+		"description": "You create up to four torch-size lights within range, making them appear as torches, lanterns, or glowing orbs that hover for the duration. Alternatively, you combine the four lights into one glowing Medium form that is vaguely humanlike. Whichever form you choose, each light sheds Dim Light in a 10-foot radius. \n\nAs a Bonus Action, you can move the lights up to 60 feet to a space within range. A light must be within 20 feet of another light created by this spell, and a light vanishes if it exceeds the spell's range.",
+		"art": "https://mysterydicegoblin.com/cdn/shop/articles/dancing-lights-5e.png"
 	},
 	{
 		"name": "Druidcraft",
@@ -52,7 +53,8 @@
 		"range": "30 feet",
 		"components": ["v", "s"],
 		"duration": "Instantaneous",
-		"description": "**Weather Sensor.** You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round. \n\n**Bloom.** You instantly make a flower blossom, a seed pod open, or a leaf bud bloom. \n\n**Sensory Effect.** You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube. \n\n**Fire Play.** You light or snuff out a candle, a torch, or a campfire."
+		"description": "**Weather Sensor.** You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round. \n\n**Bloom.** You instantly make a flower blossom, a seed pod open, or a leaf bud bloom. \n\n**Sensory Effect.** You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube. \n\n**Fire Play.** You light or snuff out a candle, a torch, or a campfire.",
+		"art": "https://mktg-assets.tcgplayer.com/fit-in/1000x1000/filters:quality(75)/content/opengraph/MTG-Devoted-Druid-UMA.jpg"
 	},
 	{
 		"name": "Eldritch Blast",
@@ -94,7 +96,8 @@
 		"components": ["v", "s"],
 		"duration": "Instantaneous",
 		"description": "You hurl a mote of fire at a creature or an object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 Fire damage. A flammable object hit by this spell starts burning if it isn't being worn or carried.",
-		"cantripUpgrade": "The damage increases by 1d10 when you reach levels 5 (2d10), 11 (3d10), and 17 (4d10)."
+		"cantripUpgrade": "The damage increases by 1d10 when you reach levels 5 (2d10), 11 (3d10), and 17 (4d10).",
+		"art": "https://arcaneeye.com/wp-content/uploads/2023/03/Ranged-Spell-Attack-in-Melee-5e.jpg"
 	},
 	{
 		"name": "Guidance",
@@ -204,7 +207,7 @@
 		"range": "10 feet",
 		"components": ["v", "s"],
 		"duration": "Up to 1 hour",
-		"description": "You create a magical effect within range. Choose the effect from the options below. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time. \n\n**Sensory Effect**. You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor. \n\nFire Play. You instantaneously light or snuff out a candle, a torch, or a small campfire. Clean or Soil. You instantaneously clean or soil an object no larger than 1 cubic foot. \n\nMinor Sensation. You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour. \n\nMagic Mark. You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour. \n\n**Minor Creation**. You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn. A trinket can deal no damage and has no monetary worth."
+		"description": "You create a magical effect within range. Choose the effect from the options below. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time. \n\n**Sensory Effect**. You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor. \n\n**Fire Play**. You instantaneously light or snuff out a candle, a torch, or a small campfire. \n\n**Clean or Soil**. You instantaneously clean or soil an object no larger than 1 cubic foot. \n\n**Minor Sensation**. You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour. \n\n**Magic Mark**. You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour. \n\n**Minor Creation**. You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn. A trinket can deal no damage and has no monetary worth."
 	},
 	{
 		"name": "Produce Flame",
@@ -432,7 +435,8 @@
 		"material": "a Holy Symbol, worth 5+ GP",
 		"duration": "up to 1 minute",
 		"description": "You bless up to three creatures within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target adds 1d4 to the attack roll or save.",
-		"higherLevelSlot": "You can target one additional creature for each spell slot level above 1."
+		"higherLevelSlot": "You can target one additional creature for each spell slot level above 1.",
+		"art": "https://images.nightcafe.studio/ik-seo/jobs/6BHmArDwPxJjsfFQPL0m/6BHmArDwPxJjsfFQPL0m--1--idd3r_2x-real-esrgan-x4-v3-wdn/dnd-series-bless-spell.jpg"
 	},
 	{
 		"name": "Burning Hands",
@@ -446,7 +450,8 @@
 		"components": ["v", "s"],
 		"duration": "Instantaneous",
 		"description": "A thin sheet of flames shoots forth from you. Each creature in a 15- foot Cone makes a Dexterity saving throw, taking 3d6 Fire damage on a failed save or half as much damage on a successful one. Flammable objects in the Cone that aren't being worn or carried start burning.",
-		"higherLevelSlot": "The damage increases by 1d6 for each spell slot level above 1."
+		"higherLevelSlot": "The damage increases by 1d6 for each spell slot level above 1.",
+		"art": "https://static.wikia.nocookie.net/forgottenrealms/images/5/56/Burning_Hands_AFR.jpg"
 	},
 	{
 		"name": "Charm Person",
@@ -546,7 +551,8 @@
 		"components": ["v", "s"],
 		"duration": "Instantaneous",
 		"description": "A creature you touch regains a number of Hit Points equal to 2d8 plus your spellcasting ability modifier.",
-		"higherLevelSlot": "The healing increases by 2d8 for each spell slot level above 1."
+		"higherLevelSlot": "The healing increases by 2d8 for each spell slot level above 1.",
+		"art": "https://www.dndlounge.com/wp-content/uploads/2025/12/dwarf-paladin-heals-half-orc-ally-scaled.webp"
 	},
 	{
 		"name": "Detect Evil and Good",
@@ -559,7 +565,8 @@
 		"range": "Self",
 		"components": ["v", "s"],
 		"duration": "up to 10 minutes",
-		"description": "For the duration, you sense the location of any Aberration, Celestial, Elemental, Fey, Fiend, or Undead within 30 feet of yourself. You also sense whether the Hallow spell is active there and, if so, where. \n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+		"description": "For the duration, you sense the location of any Aberration, Celestial, Elemental, Fey, Fiend, or Undead within 30 feet of yourself. You also sense whether the Hallow spell is active there and, if so, where. \n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.",
+		"art": "https://static0.cbrimages.com/wordpress/wp-content/uploads/2022/04/wizard.jpg"
 	},
 	{
 		"name": "Detect Magic",
@@ -572,7 +579,8 @@
 		"range": "Self",
 		"components": ["v", "s"],
 		"duration": "up to 10 minutes",
-		"description": "For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's school of magic.\n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+		"description": "For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's school of magic.\n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.",
+		"art": "https://cdna.artstation.com/p/assets/images/images/021/543/346/large/elizanel-suhoveeva-arcane-magic-by-elizanel-ddiaj0j-pre.jpg"
 	},
 	{
 		"name": "Detect Poison and Disease",
@@ -586,7 +594,8 @@
 		"components": ["v", "s", "m"],
 		"material": "a yew leaf",
 		"duration": "up to 10 minutes",
-		"description": "For the duration, you sense the location of poisons, poisonous or venomous creatures, and magical contagions within 30 feet of yourself. You sense the kind of poison, creature, or contagion in each case. \n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead."
+		"description": "For the duration, you sense the location of poisons, poisonous or venomous creatures, and magical contagions within 30 feet of yourself. You sense the kind of poison, creature, or contagion in each case. \n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.",
+		"art": "https://dungeonmusings.wordpress.com/wp-content/uploads/2015/03/scan_20150319-7.png"
 	},
 	{
 		"name": "Disguise Self",
@@ -626,7 +635,8 @@
 		"range": "Self",
 		"components": ["v", "s"],
 		"duration": "1 minute",
-		"description": "Until the spell ends, your attacks with weapons deal an extra 1d4 Radiant damage on a hit."
+		"description": "Until the spell ends, your attacks with weapons deal an extra 1d4 Radiant damage on a hit.",
+		"art": "https://i0.wp.com/dungeonmister.com/wp-content/uploads/2024/08/cleric-feats4664827524341875120.jpg"
 	},
 	{
 		"name": "Divine Smite",
@@ -641,7 +651,8 @@
 		"components": ["v"],
 		"duration": "Instantaneous",
 		"description": "The target takes an extra 2d8 Radiant damage from the attack. The damage increases by 1d8 if the target is a Fiend or an Undead.",
-		"higherLevelSlot": "The damage increases by 1d8 for each spell slot level above 1."
+		"higherLevelSlot": "The damage increases by 1d8 for each spell slot level above 1.",
+		"art": "https://www.dndbeyond.com/attachments/11/413/paladin.jpg"
 	},
 	{
 		"name": "Ensnaring Strike",
@@ -839,7 +850,8 @@
 		"components": ["v", "s"],
 		"duration": "up to 1 minute",
 		"description": "A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to the Frightened condition and gains Temporary Hit Points equal to your spellcasting ability modifier at the start of each of its turns.",
-		"higherLevelSlot": "You can target one additional creature for each spell slot level above 1."
+		"higherLevelSlot": "You can target one additional creature for each spell slot level above 1.",
+		"art": "https://www.victorydice.com/cdn/shop/articles/paladin-oaths-dnd-5e-banner.jpg"
 	},
 	{
 		"name": "Hex",
@@ -1055,7 +1067,8 @@
 		"components": ["v"],
 		"duration": "1 minute",
 		"description": "As you hit the target, it takes an extra 1d6 Fire damage from the attack. At the start of each of its turns until the spell ends, the target takes 1d6 Fire damage and then makes a Constitution saving throw. On a failed save, the spell continues. On a successful save, the spell ends.",
-		"higherLevelSlot": "All the damage increases by 1d6 for each spell slot level above 1."
+		"higherLevelSlot": "All the damage increases by 1d6 for each spell slot level above 1.",
+		"art": "https://www.gmbinder.com/images/Y1olnv5.jpg"
 	},
 	{
 		"name": "Shield",
@@ -1434,7 +1447,8 @@
 		"components": ["v", "s"],
 		"duration": "Instantaneous",
 		"description": "You summon an otherworldly being that appears as a loyal steed in an unoccupied space of your choice within range. This creature uses the **Otherworldly Steed** stat block. If you already have a steed from this spell, the steed is replaced by the new one. The steed resembles a Large, rideable animal of your choice, such as a horse, a camel, a dire wolf, or an elk. Whenever you cast the spell, choose the steed's creature type-Celestial, Fey, or Fiend which determines certain traits in the stat block. \n\n**Combat.** The steed is an ally to you and your allies. In combat, it shares your Initiative count, and it functions as a controlled mount while you ride it (as defined in the rules on mounted combat). If you have the Incapacitated condition, the steed takes its turn immediately after yours and acts independently, focusing on protecting you. \n\n**Disappearance of the Steed.** The steed disappears if it drops to 0 Hit Points or if you die. When it disappears, it leaves behind anything it was wearing or carrying. If you cast this spell again, you decide whether you summon the steed that disappeared or a different one.",
-		"higherLevelSlot": "Use the spell slot's level for the spell's level in the stat block."
+		"higherLevelSlot": "Use the spell slot's level for the spell's level in the stat block.",
+		"art": "https://www.dungeonsolvers.com/wp-content/uploads/2024/04/artis0602_35038_The_Find_Greater_Steed_spell_is_sort_of_a_super_6a4104dc-fbf9-42ac-a9d2-df33e38f76b6.webp"
 	},
 	{
 		"name": "Find Traps",
@@ -1872,7 +1886,8 @@
 		"components": ["v"],
 		"duration": "up to 1 minute",
 		"description": "The target hit by the strike takes an extra 2d6 Radiant damage from the attack. Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the Invisible condition.",
-		"higherLevelSlot": "The damage increases by 1d6 for each spell slot level above 2."
+		"higherLevelSlot": "The damage increases by 1d6 for each spell slot level above 2.",
+		"art": "https://www.belloflostsouls.net/wp-content/uploads/2021/04/boros-angel-header-image-e1652758286261.jpg"
 	},
 	{
 		"name": "Silence",
@@ -2122,7 +2137,8 @@
 		"range": "60 feet",
 		"components": ["v", "s"],
 		"duration": "1 hour",
-		"description": "For the duration, sunlight spreads from a point within range and fills a 60-foot-radius Sphere. The sunlight's area is Bright Light and sheds Dim Light for an additional 60 feet. \n\nAlternatively, you cast the spell on an object that isn't being worn or carried, causing the sunlight to fill a 60-foot Emanation originating from that object. Covering that object with something opaque, such as a bowl or helm, blocks the sunlight. \n\nIf any of this spell's area overlaps with an area of Darkness created by a spell of level 3 or lower, that other spell is dispelled."
+		"description": "For the duration, sunlight spreads from a point within range and fills a 60-foot-radius Sphere. The sunlight's area is Bright Light and sheds Dim Light for an additional 60 feet. \n\nAlternatively, you cast the spell on an object that isn't being worn or carried, causing the sunlight to fill a 60-foot Emanation originating from that object. Covering that object with something opaque, such as a bowl or helm, blocks the sunlight. \n\nIf any of this spell's area overlaps with an area of Darkness created by a spell of level 3 or lower, that other spell is dispelled.",
+		"art": "https://static.wikia.nocookie.net/forgottenrealms/images/0/0b/Daylight_php5e_revised.png"
 	},
 	{
 		"name": "Dispel Magic",
@@ -2165,7 +2181,8 @@
 		"material": "a ball of bat guano and sulfur",
 		"duration": "Instantaneous",
 		"description": "A bright streak flashes from you to a point you choose within range and then blossoms with a low roar into a fiery explosion. Each creature in a 20-foot-radius Sphere centered on that point makes a Dexterity saving throw, taking 8d6 Fire damage on a failed save or half as much damage on a successful one. Flammable objects in the area that aren't being worn or carried start burning.",
-		"higherLevelSlot": "The damage increases by 1d6 for each spell slot level above 3."
+		"higherLevelSlot": "The damage increases by 1d6 for each spell slot level above 3.",
+		"art": "https://static.wikia.nocookie.net/forgottenrealms/images/5/5a/Fireball_CLB.jpg"
 	},
 	{
 		"name": "Fly",

@@ -1,6 +1,6 @@
 :root {
     --card-height: 700px;
-    --card-width: 500px;
+    --card-width: 450px;
     --color-card: #27252e;
     --color-card-light: #3d3b47;
     --color-border-light: #cfe4ee;
@@ -20,7 +20,83 @@
 html, body {
     padding: 0;
     margin: 0;
+    min-height: 100%;
+    background: #14151a;
+    color: #f4eee5;
+    font-family: "BookInsanityRemake", Georgia, serif;
 }
+
+.spellbook-header {
+    background: linear-gradient(110deg, #29232a, #171920 72%);
+    border-bottom: 1px solid #554b4a;
+    justify-content: space-between;
+    align-items: end;
+    padding: 38px clamp(24px, 7vw, 110px) 30px;
+    display: flex;
+}
+
+.spellbook-header h1, .modal-heading h2, .empty-spellbook h2 {
+    font-family: "Metal Mania", Georgia, serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.spellbook-header h1 {font-size: clamp(30px, 5vw, 50px);}
+.eyebrow {color: #cbb58e; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; margin: 0 0 8px;}
+.add-spell-button, .confirm-spell {
+    background: #b56e3d;
+    border: 1px solid #e1a56c;
+    color: #fff7eb;
+    cursor: pointer;
+    font: inherit;
+    padding: 12px 18px;
+}
+.add-spell-button:hover, .confirm-spell:hover {background: #d1844b;}
+.spellbook {
+    background: radial-gradient(circle at 50% 0, #343039, #14151a 65%);
+    box-sizing: border-box;
+    min-height: calc(100vh - 160px);
+    padding: 54px clamp(20px, 7vw, 110px) 100px;
+}
+.empty-spellbook {text-align: center; margin: 0 auto; max-width: 430px;}
+.empty-mark {color: #cbb58e; display: block; font-size: 42px; margin-bottom: 16px;}
+.empty-spellbook h2 {font-size: 28px;}
+.empty-spellbook p {color: #aaa2a0; margin: 12px 0 24px;}
+.spell-group {margin: 0 auto 48px; max-width: 1420px;}
+.spell-group h2 {border-bottom: 1px solid #554b4a; color: #cbb58e; font-size: 20px; font-weight: normal; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;}
+.spell-grid {display: grid; grid-template-columns: repeat(auto-fill, 350px); gap: 20px; perspective: 1600px;}
+.spell-grid .card {margin: 0; zoom: 1;}
+
+.card-template {display: none;}
+.modal {background: rgba(5, 6, 9, .88); display: none; position: fixed; inset: 0; overflow-y: auto; z-index: 10;}
+.modal.open {display: block;}
+.modal-panel {background: #202127; margin: 34px auto; max-width: 1400px; padding: 30px; width: calc(100% - 60px);}
+.modal-heading {align-items: start; display: flex; justify-content: space-between;}
+.modal-heading h2 {font-size: 34px;}
+.close-modal {background: none; border: 0; color: #f4eee5; cursor: pointer; font-size: 34px; line-height: 1;}
+.filters {border-bottom: 1px solid #554b4a; display: flex; flex-wrap: wrap; gap: 30px; margin: 25px 0 16px; padding-bottom: 20px;}
+.spell-search {display: flex; flex-direction: column; gap: 9px; min-width: 240px;}
+.spell-search span {color: #cbb58e; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;}
+.spell-search input {background: #343238; border: 1px solid #554b4a; box-sizing: border-box; color: #fff7eb; font: inherit; min-height: 38px; padding: 7px 11px; width: 100%;}
+.spell-search input:focus {border-color: #cbb58e; outline: 2px solid rgba(203, 181, 142, .25);}
+.spell-search input::placeholder {color: #aaa2a0;}
+.filters fieldset {border: 0; margin: 0; padding: 0;}
+.filters legend {color: #cbb58e; font-size: 13px; margin-bottom: 9px; text-transform: uppercase; letter-spacing: 1px;}
+.filter-option {align-items: center; background: #343238; border: 1px solid #554b4a; color: #d4ccca; cursor: pointer; display: inline-flex; font: inherit; gap: 7px; margin: 0 8px 8px 0; min-height: 38px; padding: 5px 11px; text-transform: capitalize;}
+.filter-option:hover {background: #48444a;}
+.filter-option.selected {background: #77706d; color: #fff7eb;}
+.filter-option img {height: 25px; object-fit: contain; width: 25px;}
+.result-count {color: #aaa2a0; margin: 0 0 15px;}
+.spell-list {display: grid; grid-template-columns: repeat(auto-fill, 450px); gap: 16px; perspective: 1600px;}
+.spell-list .card {margin: 0; zoom: 1;}
+.inspection {align-items: center; box-sizing: border-box; display: none; flex-direction: column; height: 100%; justify-content: center; overflow: hidden; padding: 20px; position: fixed; inset: 0; text-align: center; z-index: 2;}
+.inspection.visible {background-color: rgba(0, 0, 0, 0.8); display: flex;}
+.inspection-card {display: flex; justify-content: center; perspective: 1600px;}
+.inspection-card .card {margin: 0;}
+.inspection-actions {display: flex; flex-direction: column; gap: 10px; margin: 22px auto 0; max-width: 300px;}
+.cancel-inspection {background: transparent; border: 1px solid #776d6b; color: #d4ccca; cursor: pointer; font: inherit; padding: 10px 18px;}
+.sr-only {height: 1px; overflow: hidden; position: absolute; width: 1px; clip: rect(0, 0, 0, 0);}
 
 .container {
     background: radial-gradient(#555, #222);
@@ -241,9 +317,6 @@ html, body {
     height: 32px;
     width: 32px;
 }
-.card .spell-contents {
-    
-}
 .card .spell-name {
     /*background: linear-gradient(180deg, var(--color-border-light) 0%, var(--color-border-dark) 100%);*/
     background-color: var(--color-card-light);
@@ -434,4 +507,14 @@ html, body {
     font-weight: normal;
     font-style: italic;
     src: url("../fonts/Bookinsanity Italic.woff2");
+}
+
+.focused {cursor: grab; touch-action: none; user-select: none;}
+.focused:active {cursor: grabbing;}
+
+@media (max-width: 600px) {
+    .spellbook-header {align-items: start; flex-direction: column; gap: 22px;}
+    .spellbook-header .add-spell-button {align-self: stretch;}
+    .modal-panel {margin: 0; min-height: 100vh; padding: 24px 18px; width: auto;}
+    .spell-list, .spell-grid {grid-template-columns: 350px; gap: 10px;}
 }
