@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>2024 Spellbook</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Pangolin&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./css/main.css">
-        <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
-        <script type="text/javascript" src="./js/drawdown.js"></script>
-        <script type="text/javascript" src="./js/main.js" defer></script>
+    <link rel="shortcut icon" href="../img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Pangolin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/drawdown.js"></script>
+    <script type="text/javascript" src="./js/main.js" defer></script>
     </head>
     <body>
         <header class="spellbook-header">
             <div>
-                <p class="eyebrow">Dungeons &amp; Dragons 2024</p>
-                <h1>Prepared Spellbook</h1>
+                <!--<p class="eyebrow">Dungeons &amp; Dragons 2024</p>-->
+                <h1>2024 Spellbook</h1>
             </div>
             <button class="add-spell-button" type="button">+ Add spells</button>
         </header>
@@ -31,7 +32,7 @@
             <div class="modal-panel spell-picker-panel" role="dialog" aria-modal="true" aria-labelledby="picker-title">
                 <div class="modal-heading">
                     <div>
-                        <p class="eyebrow">The archive</p>
+                        <!--<p class="eyebrow">The archive</p>-->
                         <h2 id="picker-title">Choose spells</h2>
                     </div>
                     <button class="close-modal" type="button" aria-label="Close spell picker">&times;</button>
@@ -67,6 +68,8 @@
                 <div class="backside">
                     <div class="background"></div>
                     <div class="spell-school"></div>
+                    <div class="source"></div>
+                    <div class="classes"></div>
                     <div class="border-outer">
                         <div class="border-inner"></div>
                     </div>
@@ -83,9 +86,7 @@
                             </div>
                             <div class="spell-contents">
                                 <div class="spell-name">Title</div>
-                                <div class="spell-description">
-                                    Description
-                                </div>
+                                <div class="spell-description"></div>
                                 <div class="spell-attributes">
                                     <span class="spell-range">60 ft</span>
                                     <span class="spell-duration">1 minute</span>

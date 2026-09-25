@@ -15,20 +15,22 @@ const schoolIcons = {
     "illusion" : "lorc/shadow-follower",
     "enchantment" : "lorc/fairy-wand",
     "transmutation" : "delapouite/vitruvian-man",
-    //"evocation" : "lorc/embrassed-energy",
     "evocation" : "lorc/unstable-orb",
     "divination" : "lorc/crystal-ball",
     "conjuration" : "lorc/transportation-rings",
-    "abjuration" : "lorc/rosa-shield"
+    "abjuration" : "lorc/rosa-shield",
+    "biomancy" : "lorc/tumor"
 }
 const schoolArts = {
     "abjuration" : "https://mktg-assets.tcgplayer.com/fit-in/1000x1000/filters:quality(75)/content/opengraph/MTG-Syncopate-VOW.jpg",
+    "biomancy" : "https://cards.scryfall.io/art_crop/front/3/2/32ed38e8-c7eb-4ec8-9bde-a37639fafe45.jpg",
     "conjuration" : "https://i0.wp.com/nerdarchy.com/wp-content/uploads/2021/07/mtg-basic-conjuration-spells-5E-DD-strixhaven.jpg?fit=920%2C690&ssl=1&w=640",
     "divination" : "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/edac9d2b-74dc-41a2-8f6b-29e3d2dbefa5/d6uneu0-98ef8449-996e-4627-9b79-4e8acd8df416.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9lZGFjOWQyYi03NGRjLTQxYTItOGY2Yi0yOWUzZDJkYmVmYTUvZDZ1bmV1MC05OGVmODQ0OS05OTZlLTQ2MjctOWI3OS00ZThhY2Q4ZGY0MTYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BxP9HE_IJ0hMVjcEgWqXpletegYqZZ8Cwz5cBVe8PaM",
     "enchantment" : "https://www.runicdice.com/cdn/shop/articles/School_of_Enchantment_Wizard_Guide_for_Beginners_Mastering_Mind_Control_in_D_D_5e_58efd774-cc6a-4f00-8f7f-9e6b853ffcea.png",
     "evocation" : "https://www.wargamer.com/wp-content/sites/wargamer/2023/01/dnd-wizard-spells-5e-tasha-spellbook.jpg",
     "illusion" : "https://static0.thegamerimages.com/wordpress/wp-content/uploads/2020/02/fear-Cropped.jpg?q=50&fit=crop&w=749&dpr=1.5",
-    "necromancy" : "https://static0.cbrimages.com/wordpress/wp-content/uploads/2021/06/Time-Ravage-Cropped.jpg?q=50&fit=crop&w=825&dpr=1.5",
+    //"necromancy" : "https://static0.cbrimages.com/wordpress/wp-content/uploads/2021/06/Time-Ravage-Cropped.jpg?q=50&fit=crop&w=825&dpr=1.5",
+    "necromancy" : "https://static0.cbrimages.com/wordpress/wp-content/uploads/2021/06/DD-Necromancer-Wizard.jpg",
     "transmutation" : "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2020/06/Shape-Water-Most-Useful-DND-5e-Spells.jpg?q=70&fit=crop&w=825&dpr=1"
 }
 const actionTypes = {
@@ -87,15 +89,17 @@ function buildCard(spell) {
     const card = cardTemplate.clone().removeClass('template').attr('data-spell', spell.name);
     card.find('.spell-slot span').html(spell.level === 0 ? 'C' : spell.level);
     card.find('.spell-name').html(spell.name);
-    let description = markdown(spell.description);
-    if (spell.cantripUpgrade) description += '<p><b>At Higher Levels.</b> ' + spell.cantripUpgrade + '</p>';
-    if (spell.higherLevelSlot) description += '<p><b>Using a Higher-Level Spell Slot.</b> ' + spell.higherLevelSlot + '</p>';
-    card.find('.spell-description').html(description);
+    let $desc = card.find('.spell-description');
+    $desc.append(markdown(spell.description));
+    if (spell.cantripUpgrade) $desc.append( $($.parseHTML(markdown(spell.cantripUpgrade))).addClass('cantripUpgrade') );
+    if (spell.higherLevelSlot) $desc.append( $($.parseHTML(markdown(spell.higherLevelSlot))).addClass('higherLevelSlot') );
     card.find('.spell-range').html(spell.range);
     card.find('.spell-duration').html(spell.duration);
     card.find('.image img').attr({ src: spell.art || schoolArts[spell.school], alt: spell.name });
     card.addClass(spell.school);
     card.find('.spell-school').css('background-image', 'url(./img/schools/' + spell.school + '.png)');
+    card.find('.source').html(spell.source);
+    card.find('.classes').html(spell.classes.map(className => '<img src="../img/icons/' + classIcons[className] + '.png" alt="' + className + '" title="' + className + '">').join(''));
     card.find('.spell-type img').attr({ src: '../img/icons/' + schoolIcons[spell.school] + '.png', alt: spell.school });
     if (spell.ritual) card.find('.ritual').addClass('toggle');
     if (spell.concentration) card.find('.concentration').addClass('toggle');
