@@ -64,9 +64,9 @@ html, body {
 .empty-mark {color: #cbb58e; display: block; font-size: 42px; margin-bottom: 16px;}
 .empty-spellbook h2 {font-size: 28px;}
 .empty-spellbook p {color: #aaa2a0; margin: 12px 0 24px;}
-.spell-group {margin: 0 auto 48px; max-width: 1420px;}
+.spell-group {/*margin: 0 auto 48px; max-width: 1420px;*/}
 .spell-group h2 {border-bottom: 1px solid #554b4a; color: #cbb58e; font-size: 20px; font-weight: normal; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;}
-.spell-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; perspective: 1600px;}
+.spell-grid {display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; perspective: 1600px;}
 .spell-grid .card {margin: 0 auto; zoom: .75;}
 
 .card-template {display: none;}
@@ -570,6 +570,14 @@ html, body {
 
 .focused {cursor: grab; touch-action: none; user-select: none;}
 .focused:active {cursor: grabbing;}
+
+@media (max-width: 2340px) {
+    .spell-list, .spell-grid {grid-template-columns: repeat(5, 1fr);}
+}
+
+@media (max-width: 2000px) {
+    .spell-list, .spell-grid {grid-template-columns: repeat(4, 1fr);}
+}
 
 @media (max-width: 1630px) {
     .spell-list, .spell-grid {grid-template-columns: repeat(5, 1fr);}
