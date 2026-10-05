@@ -601,4 +601,5 @@ html, body {
     .spellbook-header .add-spell-button {align-self: stretch;}
     .modal-panel {margin: 0; min-height: 100vh; padding: 24px 18px; width: auto;}
     .spell-list, .spell-grid {grid-template-columns: 350px; gap: 10px;}
+    .card.focused, .spell-grid .card, .spell-list .card {zoom: .75;}
 }
